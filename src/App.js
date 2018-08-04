@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {injectGlobal} from 'styled-components'
+import 'animate.css'
+
+//Components
 import Hero from './components/hero'
 import Navbar from './components/nav'
 import Projects from './components/projects'

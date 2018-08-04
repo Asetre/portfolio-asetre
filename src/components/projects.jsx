@@ -5,6 +5,8 @@ import EurasiersImg from '../assets/imgs/eurasiers.jpg'
 import TripCostImg from '../assets/imgs/trip-cost.jpg'
 import GroupLibraryImg from '../assets/imgs/group-library.jpg'
 import ProjectImg from '../assets/imgs/project-bg.jpg'
+import TrackVisibility from 'react-on-screen'
+import Typist from 'react-typist'
 
 const StyledProjectsContainer = styled.div`
 width: 100%;
@@ -37,10 +39,17 @@ width: 100%;
     font-family: Righteous;
     font-size: 42px;
   }
+
+  .project-section-header-sub-text {
+    font-size: 20px;
+    margin-top: 40px;
+    word-spacing: 20px;
+  }
 }
 `
 
 const Project = styled.div`
+  position: relative;
   height: 463px;
   width: 100%;
   display: flex;
@@ -69,45 +78,145 @@ const Project = styled.div`
     width: 680px;
     height: 465px;
   }
+
+  .project-hover-container {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 34, 0.55);
+    position: absolute;
+    right: 0;
+    width: 680px;
+    height: 465px;
+  }
+
+  .project-hover-text {
+    font-size: 46px;
+    font-family: Hasklig;
+  }
+
+  .project-hover-container:hover {
+    opacity: 1;
+  }
+
 `
 
 export default function Projects() {
   return (
-    <StyledProjectsContainer>
+    <StyledProjectsContainer id="Projects">
       <div className="project-section-header">
         <div className="project-header-bg-cover">
           <p className="project-section-header-text">Projects</p>
-          <p className="project-section-header-sub-text">lorem ipsum</p>
+          <TrackVisibility>
+            {({ isVisible }) => {
+              return isVisible
+                ? <Typist className="project-section-header-sub-text">
+                    ReactJs HTML CSS NodeJS Git Javascript Mongo AWS AdobeXD
+                  </Typist>
+                : null
+            }}
+          </TrackVisibility>
         </div>
       </div>
 
       <Project>
         <div className="project-text-container">
-          <p className="project-header">Chess Battles</p>
-          <p className="project-sub-header">Web Application</p>
+          <TrackVisibility>
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-header animated flipInX delay-0.5s">Chess Battles</p>
+                : null
+            }}
+          </TrackVisibility>
+
+          <TrackVisibility>
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-sub-header animated slideInUp">Web Application</p>
+                : null
+            }}
+          </TrackVisibility>
         </div>
+        <a href="https://chessbattles.paulasetre.com" className="project-hover-container">
+          <p className="project-hover-text">Visit</p>
+        </a>
         <img className="project-img" src={ChessBattlesImg} alt="Chess Battles" />
       </Project>
+
       <Project>
         <div className="project-text-container">
-          <p className="project-header">Edelweiss Eurasiers</p>
-          <p className="project-sub-header">Design Concept</p>
+          <TrackVisibility>
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-header animated flipInX delay-0.5s">Edelweiss Eurasiers</p>
+                : null
+            }}
+          </TrackVisibility>
+
+          <TrackVisibility>
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-sub-header animated slideInUp">Design Concept</p>
+                : null
+            }}
+          </TrackVisibility>
         </div>
-        <img className="project-img" src={EurasiersImg} alt="Edleweiss Eurasiers" />
+
+        <a href="#" className="project-hover-container">
+          <p className="project-hover-text">Visit</p>
+        </a>
+          <img className="project-img" src={EurasiersImg} alt="Edleweiss Eurasiers" />
       </Project>
+
       <Project>
         <div className="project-text-container">
-          <p className="project-header">Trip Cost Calculator</p>
-          <p className="project-sub-header">Front-End</p>
+          <TrackVisibility>
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-header animated flipInX delay-0.5s">Trip Cost Calculator</p>
+                : null
+            }}
+          </TrackVisibility>
+
+          <TrackVisibility>
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-sub-header animated slideInUp">Front-End</p>
+                : null
+            }}
+          </TrackVisibility>
         </div>
+        <a href="https://asetre.github.io/capstoneProj/" className="project-hover-container">
+          <p className="project-hover-text">Visit</p>
+        </a>
         <img className="project-img" src={TripCostImg} alt="Trip Cost Calculator" />
       </Project>
+
       <Project>
         <div className="project-text-container">
-          <p className="project-header">Group Library</p>
-          <p className="project-sub-header">Web Application</p>
+          <TrackVisibility>
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-header animated flipInX delay-0.5s">Group Library</p>
+                : null
+            }}
+          </TrackVisibility>
+
+          <TrackVisibility>
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-sub-header animated slideInUp">Web Application</p>
+                : null
+            }}
+          </TrackVisibility>
         </div>
-        <img className="project-img" src={GroupLibraryImg} alt="Group Library" />
+        <a href="http://ec2-54-185-58-23.us-west-2.compute.amazonaws.com:8000" className="project-hover-container">
+          <p className="project-hover-text">Visit</p>
+        </a>
+          <img className="project-img" src={GroupLibraryImg} alt="Group Library" />
       </Project>
     </StyledProjectsContainer>
   )

@@ -23,29 +23,34 @@ padding: 30px 50px;
   right: 25px;
   bottom: 20px;
 }
-`
 
-const FooterLink = styled.a`
-color: white;
-margin: 5px 0;
+.footer-link {
+  color: white;
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  opacity: 0.2;
+}
 `
 
 export default function Footer() {
   return (
     <StyledFooter>
       <div className="footer-links-container footer-container">
-        <FooterLink>Github</FooterLink>
-        <FooterLink>Linkedin</FooterLink>
-        <FooterLink>StackOverflow</FooterLink>
+        <a href="https://github.com/Asetre" className="footer-link">Github</a>
+        <a href="https://www.linkedin.com/in/paul-asetre/" className="footer-link">Linkedin</a>
+        <a href="https://stackoverflow.com/users/9094738/paul-asetre" className="footer-link">StackOverflow</a>
       </div>
 
       <div className="footer-nav-container footer-container">
-        <FooterLink>About</FooterLink>
-        <FooterLink>Projects</FooterLink>
+        <a href="#About" className="footer-link">About</a>
+        <a href="#Projects" className="footer-link">Projects</a>
       </div>
 
       <div className="footer-contact-container footer-container">
-        <FooterLink>asetre.paul@gmail.com</FooterLink>
+        <a href="mailto:asetre.paul@gmailcom" className="footer-link">asetre.paul@gmail.com</a>
       </div>
 
       <p className="watermark">Designed and developed by Paul Asetre</p>

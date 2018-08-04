@@ -59,6 +59,10 @@ height: 60px;
 color: white;
 font-family: Hasklig;
 font-size: 16px;
+
+&:hover {
+  opacity: 0.4;
+}
 `
 
 const AboutCircle = styled.div`
@@ -73,7 +77,7 @@ export default function About() {
   return (
     <StyledAbout id="About">
       <p className="about-header">About</p>
-      <p className="about-content-text">I'ma a Vancouver based developer with a passion for technology. I love to solve problems and learn new things.</p>
+      <p className="about-content-text">Hello, eh! I have a strong passion for technology and geek out over new tech hardware/software. I love to solve problems and learn new things.</p>
       <p className="about-connect-text">Lets connect</p>
       <div className="about-connect-separator-container">
         <AboutCircle></AboutCircle>
@@ -81,11 +85,14 @@ export default function About() {
         <AboutCircle></AboutCircle>
       </div>
       <div className="about-btn-container">
-        <a href="3">
+        <a href="https://github.com/Asetre" target="_blank">
           <AboutBtn color='#2b3137'>Github</AboutBtn>
         </a>
-        <AboutBtn color='#0077b5'>Linkedin</AboutBtn>
-        <a href="#">
+        <a href="https://www.linkedin.com/in/paul-asetre/" target="_blank">
+          <AboutBtn color='#0077b5'>Linkedin</AboutBtn>
+        </a>
+
+        <a href="mailto:asetre.paul@gmail.com">
           <AboutBtn color='#c71610'>asetre.paul@gmail.com</AboutBtn>
         </a>
       </div>

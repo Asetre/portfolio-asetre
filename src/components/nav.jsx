@@ -14,16 +14,24 @@ z-index: 9999;
    top: 50%;
    color: white;
    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+   user-select: none;
+ }
+
+ .nav-item:hover {
+   opacity: .2;
  }
 `
 function handleNavClick(el) {
-  document.getElementById(el).scrollIntoView()
+  const scrollOptions = {
+    behavior: 'smooth'
+  }
+  document.getElementById(el).scrollIntoView(scrollOptions)
 }
 
 export default function Navbar() {
   return(
     <StyledNavbar>
-      <p className="nav-item" onClick={() => handleNavClick('')}>Back to top</p>
+      <p className="nav-item" onClick={() => handleNavClick('Hero')}>Back to top</p>
       <p className="nav-item" onClick={() => handleNavClick('About')}>About</p>
     </StyledNavbar>
   )

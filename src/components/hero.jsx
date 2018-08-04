@@ -58,12 +58,12 @@ position: relative;
 
 export default function Hero() {
   return (
-    <StyledHero>
+    <StyledHero id="Hero">
       <div className="hero-bg-cover">
         <h1 className="hero-header">Paul Asetre</h1>
         <div className="hero-line-divider"></div>
         <p className="hero-sub-header">Fullstack Developer</p>
-        <div className="arrow-down"></div>
+        <div className="arrow-down animated bounce slow"></div>
       </div>
     </StyledHero>
   )
