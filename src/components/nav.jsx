@@ -16,12 +16,15 @@ z-index: 9999;
    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
  }
 `
+function handleNavClick(el) {
+  document.getElementById(el).scrollIntoView()
+}
 
 export default function Navbar() {
   return(
     <StyledNavbar>
-      <p className="nav-item">Back to top</p>
-      <p className="nav-item">About</p>
+      <p className="nav-item" onClick={() => handleNavClick('')}>Back to top</p>
+      <p className="nav-item" onClick={() => handleNavClick('About')}>About</p>
     </StyledNavbar>
   )
 }

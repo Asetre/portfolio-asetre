@@ -4,6 +4,14 @@ import Hero from './components/hero'
 import Navbar from './components/nav'
 import Projects from './components/projects'
 import About from './components/about'
+import Footer from './components/footer'
+
+//Fonts
+import butler from './assets/fonts/Butler/Butler_Black.otf'
+import hasklig from './assets/fonts/Hasklig/Hasklig-Regular.otf'
+import lobster from './assets/fonts/Lobster/Lobster-Regular.ttf'
+import pixel from './assets/fonts/Pix/PixelPix.ttf'
+import righteous from './assets/fonts/Righteous/Righteous-Regular.ttf'
 
 injectGlobal`
 * {
@@ -14,27 +22,27 @@ injectGlobal`
 
 @font-face {
   font-family: 'Butler';
-  src: url('./assets/fonts/Butler/Butler_black.otf')
+  src: url(${butler})
 }
 
 @font-face {
   font-family: 'Hasklig';
-  src: url('./assets/fonts/Hasklig/Hasklig-Regular.otf')
+  src: url(${hasklig})
 }
 
 @font-face {
   font-family: 'Lobster';
-  src: url('./assets/fonts/Lobster/Lobster-Regular.ttf')
+  src: url(${lobster})
 }
 
 @font-face {
-  font-family: 'Pix';
-  src: url('./assets/fonts/Pix/PixelFJVerdana12pt.ttf')
+  font-family: 'PixelVerdana';
+  src: url(${pixel})
 }
 
 @font-face {
   font-family: 'Righteous';
-  src: url('./assets/fonts/Righteous/Righteous-Regular.ttf')
+  src: url(${righteous})
 }
 `
 
@@ -46,6 +54,7 @@ class App extends Component {
         <Hero></Hero>
         <Projects></Projects>
         <About></About>
+        <Footer></Footer>
       </div>
     )
   }
