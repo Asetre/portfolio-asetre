@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import TrackVisibility from 'react-on-screen'
+import ReactGA from 'react-ga'
 
 const StyledProject = styled.div`
   position: relative;
@@ -107,6 +108,13 @@ background-repeat: no-repeat;
 width: 1530px;
 `
 
+const handleVisitClick = (type) => {
+  ReactGA.event({
+    category: 'Project Click',
+    action: type
+  })
+}
+
 export default function Project(props) {
   let title = props.title
   return (
@@ -135,7 +143,7 @@ export default function Project(props) {
       <ProjectImg src={props.src}>
         <div className="proj-img-backdrop">
           <p className="proj-img-title">{title}</p>
-          <a href={props.link} className="project-hover-container">
+          <a href={props.link} className="project-hover-container" onClick={() => handleVisitClick(title)}>
             <p className="project-hover-text">Visit</p>
           </a>
         </div>

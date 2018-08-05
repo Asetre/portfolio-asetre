@@ -60,6 +60,12 @@ injectGlobal`
 `
 
 class App extends Component {
+  componentDidMount() {
+    ReactGA.event({
+      category: 'Site Loaded',
+      action: 'Site Loaded'
+    })
+  }
   render() {
     return (
       <div className='App'>
