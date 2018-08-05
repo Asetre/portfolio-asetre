@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ReactGA from 'react-ga'
 
 const StyledNavbar = styled.div`
 position: fixed;
@@ -22,6 +23,11 @@ z-index: 9999;
  }
 `
 function handleNavClick(el) {
+  ReactGA.event({
+    category: 'Navigation',
+    action: el
+  })
+
   const scrollOptions = {
     behavior: 'smooth'
   }

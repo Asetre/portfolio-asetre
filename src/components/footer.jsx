@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ReactGA from 'react-ga'
 
 const StyledFooter = styled.div`
 width: 100%;
@@ -47,13 +48,20 @@ padding: 30px 50px;
 }
 `
 
+const handleFooterLinkClick = (type) => {
+  ReactGA.event({
+    category: 'Footer',
+    action: type
+  })
+}
+
 export default function Footer() {
   return (
     <StyledFooter>
       <div className="footer-links-container footer-container">
-        <a href="https://github.com/Asetre" className="footer-link">Github</a>
-        <a href="https://www.linkedin.com/in/paul-asetre/" className="footer-link">Linkedin</a>
-        <a href="https://stackoverflow.com/users/9094738/paul-asetre" className="footer-link">StackOverflow</a>
+        <a href="https://github.com/Asetre" className="footer-link" onClick={() => handleFooterLinkClick('Github')}>Github</a>
+        <a href="https://www.linkedin.com/in/paul-asetre/" className="footer-link" onClick={() => handleFooterLinkClick('Linkedin')}>Linkedin</a>
+        <a href="https://stackoverflow.com/users/9094738/paul-asetre" className="footer-link" onClick={() => handleFooterLinkClick('Stack Overflow')}>StackOverflow</a>
       </div>
 
       <div className="footer-nav-container footer-container">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {injectGlobal} from 'styled-components'
 import 'animate.css'
+import ReactGA from 'react-ga';
 
 //Components
 import Hero from './components/hero'
@@ -16,6 +17,9 @@ import hasklig from './assets/fonts/Hasklig/Hasklig-Regular.otf'
 import lobster from './assets/fonts/Lobster/Lobster-Regular.ttf'
 import pixel from './assets/fonts/Pix/PixelPix.ttf'
 import righteous from './assets/fonts/Righteous/Righteous-Regular.ttf'
+
+//Google Analytics
+ReactGA.initialize('UA-123370185-1');
 
 injectGlobal`
 * {

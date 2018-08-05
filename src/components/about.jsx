@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ReactGa from 'react-ga'
 
 const StyledAbout = styled.div`
 position: relative;
@@ -85,6 +86,13 @@ background-color: #707070;
 margin: 15px 5px;
 `
 
+const handleBtnClick = (type) => {
+  ReactGa.event({
+    category: 'About',
+    action: type
+  })
+}
+
 export default function About() {
   return (
     <StyledAbout id="About">
@@ -97,15 +105,15 @@ export default function About() {
         <AboutCircle></AboutCircle>
       </div>
       <div className="about-btn-container">
-        <a href="https://github.com/Asetre" target="_blank">
+        <a href="https://github.com/Asetre" target="_blank" onClick={() => handleBtnClick('Github')}>
           <AboutBtn color='#2b3137'>Github</AboutBtn>
         </a>
-        <a href="https://www.linkedin.com/in/paul-asetre/" target="_blank">
+        <a href="https://www.linkedin.com/in/paul-asetre/" target="_blank" onClick={() => handleBtnClick('Linkedin')}>
           <AboutBtn color='#0077b5'>Linkedin</AboutBtn>
         </a>
 
-        <a href="mailto:asetre.paul@gmail.com">
-          <AboutBtn color='#c71610'>asetre.paul@gmail.com</AboutBtn>
+        <a href="mailto:asetre.paul@gmail.com" onClick={() => handleBtnClick('Gmail')}>
+          <AboutBtn color='#c71610'>asetre.paul@gmail.com</AboutBtn >
         </a>
       </div>
 

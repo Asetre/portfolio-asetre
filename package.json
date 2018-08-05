@@ -6,6 +6,7 @@
     "animate.css": "^3.7.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-ga": "^2.5.3",
     "react-on-screen": "^2.0.4",
     "react-scripts": "1.1.4",
     "react-typist": "^2.0.4",
