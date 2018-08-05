@@ -4,9 +4,30 @@ import ChessBattlesImg from '../assets/imgs/chess-battles.jpg'
 import EurasiersImg from '../assets/imgs/eurasiers.jpg'
 import TripCostImg from '../assets/imgs/trip-cost.jpg'
 import GroupLibraryImg from '../assets/imgs/group-library.jpg'
-import ProjectImg from '../assets/imgs/project-bg.jpg'
-import TrackVisibility from 'react-on-screen'
+import ProjectBgImg from '../assets/imgs/project-bg.jpg'
 import Typist from 'react-typist'
+import TrackVisibility from 'react-on-screen'
+import Project from './project'
+
+const projects = [
+  {title: 'Chess Battles',
+  img: ChessBattlesImg,
+  link: 'https://chessbattles.paulasetre.com'
+  },
+  {title: 'Edelweiss Eurasiers',
+  img: EurasiersImg,
+  link: '#'
+  },
+  {title: 'Trip Calculator',
+  img: TripCostImg,
+  link: 'https://asetre.github.io/capstoneProj/'
+  },
+  {title: 'Group Library',
+  img: GroupLibraryImg,
+  link: 'http://ec2-54-185-58-23.us-west-2.compute.amazonaws.com:8000'
+  }
+]
+
 
 const StyledProjectsContainer = styled.div`
 width: 100%;
@@ -19,7 +40,7 @@ width: 100%;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-image: url(${ProjectImg});
+  background-image: url(${ProjectBgImg});
   background-size: cover;
   background-position: center;
 
@@ -48,61 +69,6 @@ width: 100%;
 }
 `
 
-const Project = styled.div`
-  position: relative;
-  height: 463px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  color: #6d6d6d;
-
-  .project-text-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .project-header {
-    font-family: Butler;
-    font-size: 42px;
-  }
-
-  .project-sub-header {
-    font-family: Butler;
-    font-size: 20px;
-  }
-
-  .project-img {
-    width: 680px;
-    height: 465px;
-  }
-
-  .project-hover-container {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    opacity: 0;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 34, 0.55);
-    position: absolute;
-    right: 0;
-    width: 680px;
-    height: 465px;
-  }
-
-  .project-hover-text {
-    font-size: 46px;
-    font-family: Hasklig;
-  }
-
-  .project-hover-container:hover {
-    opacity: 1;
-  }
-
-`
 
 export default function Projects() {
   return (
@@ -114,7 +80,7 @@ export default function Projects() {
             {({ isVisible }) => {
               return isVisible
                 ? <Typist className="project-section-header-sub-text">
-                    ReactJs HTML CSS NodeJS Git Javascript Mongo AWS AdobeXD
+                  ReactJs HTML CSS NodeJS Git Javascript Mongo AWS AdobeXD
                   </Typist>
                 : null
             }}
@@ -122,102 +88,91 @@ export default function Projects() {
         </div>
       </div>
 
-      <Project>
-        <div className="project-text-container">
-          <TrackVisibility>
-            {({ isVisible }) => {
-              return isVisible
-                ? <p className="project-header animated flipInX delay-0.5s">Chess Battles</p>
-                : null
-            }}
-          </TrackVisibility>
+      {projects.map(proj => {
+        return <Project title={proj.title} src={proj.img} link={proj.link}/>
+      })}
 
-          <TrackVisibility>
-            {({ isVisible }) => {
-              return isVisible
-                ? <p className="project-sub-header animated slideInUp">Web Application</p>
-                : null
-            }}
-          </TrackVisibility>
-        </div>
-        <a href="https://chessbattles.paulasetre.com" className="project-hover-container">
-          <p className="project-hover-text">Visit</p>
-        </a>
-        <img className="project-img" src={ChessBattlesImg} alt="Chess Battles" />
-      </Project>
 
-      <Project>
-        <div className="project-text-container">
-          <TrackVisibility>
-            {({ isVisible }) => {
-              return isVisible
-                ? <p className="project-header animated flipInX delay-0.5s">Edelweiss Eurasiers</p>
-                : null
-            }}
-          </TrackVisibility>
-
-          <TrackVisibility>
-            {({ isVisible }) => {
-              return isVisible
-                ? <p className="project-sub-header animated slideInUp">Design Concept</p>
-                : null
-            }}
-          </TrackVisibility>
-        </div>
-
-        <a href="#" className="project-hover-container">
-          <p className="project-hover-text">Visit</p>
-        </a>
-          <img className="project-img" src={EurasiersImg} alt="Edleweiss Eurasiers" />
-      </Project>
-
-      <Project>
-        <div className="project-text-container">
-          <TrackVisibility>
-            {({ isVisible }) => {
-              return isVisible
-                ? <p className="project-header animated flipInX delay-0.5s">Trip Cost Calculator</p>
-                : null
-            }}
-          </TrackVisibility>
-
-          <TrackVisibility>
-            {({ isVisible }) => {
-              return isVisible
-                ? <p className="project-sub-header animated slideInUp">Front-End</p>
-                : null
-            }}
-          </TrackVisibility>
-        </div>
-        <a href="https://asetre.github.io/capstoneProj/" className="project-hover-container">
-          <p className="project-hover-text">Visit</p>
-        </a>
-        <img className="project-img" src={TripCostImg} alt="Trip Cost Calculator" />
-      </Project>
-
-      <Project>
-        <div className="project-text-container">
-          <TrackVisibility>
-            {({ isVisible }) => {
-              return isVisible
-                ? <p className="project-header animated flipInX delay-0.5s">Group Library</p>
-                : null
-            }}
-          </TrackVisibility>
-
-          <TrackVisibility>
-            {({ isVisible }) => {
-              return isVisible
-                ? <p className="project-sub-header animated slideInUp">Web Application</p>
-                : null
-            }}
-          </TrackVisibility>
-        </div>
-        <a href="http://ec2-54-185-58-23.us-west-2.compute.amazonaws.com:8000" className="project-hover-container">
-          <p className="project-hover-text">Visit</p>
-        </a>
-          <img className="project-img" src={GroupLibraryImg} alt="Group Library" />
-      </Project>
     </StyledProjectsContainer>
   )
 }
+
+/*
+      <Project>
+        <div className="project-text-container">
+          <TrackVisibility className="animated flipInX delay-0.5s">
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-header">Eurasiers</p>
+                : null
+            }}
+          </TrackVisibility>
+
+          <TrackVisibility className="animated slideInUp">
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-sub-header">Design Concept</p>
+                : null
+            }}
+          </TrackVisibility>
+        </div>
+
+        <ProjectImg src={EurasiersImg}>
+          <a href="#" className="project-hover-container">
+            <p className="project-hover-text">Visit</p>
+          </a>
+        </ProjectImg>
+      </Project>
+
+      <Project>
+        <div className="project-text-container">
+          <TrackVisibility className="animated flipInX delay-0.5s">
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-header">Trip Calculator</p>
+                : null
+            }}
+          </TrackVisibility>
+
+          <TrackVisibility className="animated slideInUp">
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-sub-header">Front-End</p>
+                : null
+            }}
+          </TrackVisibility>
+        </div>
+
+        <ProjectImg src={TripCostImg}>
+          <a href="" className="project-hover-container">
+            <p className="project-hover-text">Visit</p>
+          </a>
+        </ProjectImg>
+      </Project>
+
+      <Project>
+        <div className="project-text-container">
+          <TrackVisibility class="animated flipInX delay-0.5s">
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-header">Group Library</p>
+                : null
+            }}
+          </TrackVisibility>
+
+          <TrackVisibility className="animated slideInUp">
+            {({ isVisible }) => {
+              return isVisible
+                ? <p className="project-sub-header">Web Application</p>
+                : null
+            }}
+          </TrackVisibility>
+        </div>
+        <ProjectImg src={GroupLibraryImg}>
+          <a href="" className="project-hover-container">
+            <p className="project-hover-text">Visit</p>
+          </a>
+        </ProjectImg>
+      </Project>
+
+*/
