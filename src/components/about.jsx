@@ -49,6 +49,18 @@ padding-top: 150px;
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 900px) {
+  .about-skill {
+    color: rgba(36, 36, 36, 0.16);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-content-text {
+    width: 240px;
+  }
+}
 `
 
 const AboutBtn = styled.button`

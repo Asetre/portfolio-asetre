@@ -14,7 +14,7 @@ const projects = [
   img: ChessBattlesImg,
   link: 'https://chessbattles.paulasetre.com'
   },
-  {title: 'Edelweiss Eurasiers',
+  {title: 'Eurasiers',
   img: EurasiersImg,
   link: '#'
   },
@@ -54,6 +54,7 @@ width: 100%;
     align-items: center;
     justify-content: center;
     color: white;
+    padding: 20px 100px;
   }
 
   .project-section-header-text {
@@ -62,11 +63,18 @@ width: 100%;
   }
 
   .project-section-header-sub-text {
+    font-family: Butler-Light;
     font-size: 20px;
     margin-top: 40px;
     word-spacing: 20px;
   }
 }
+  @media (max-width: 600px) {
+    .project-section-header-sub-text {
+      font-size: 14px !important;
+      word-spacing: 5px !important;
+    }
+  }
 `
 
 
@@ -80,7 +88,7 @@ export default function Projects() {
             {({ isVisible }) => {
               return isVisible
                 ? <Typist className="project-section-header-sub-text">
-                  ReactJs HTML CSS NodeJS Git Javascript Mongo AWS AdobeXD
+                  ReactJs HTML CSS NodeJS Git Javascript Mongo
                   </Typist>
                 : null
             }}

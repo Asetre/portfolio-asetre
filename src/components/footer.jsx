@@ -33,6 +33,18 @@ padding: 30px 50px;
 .footer-link:hover {
   opacity: 0.2;
 }
+
+@media (max-width: 900px) {
+  .footer-contact-container {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .watermark {
+    font-size: 12px;
+  }
+}
 `
 
 export default function Footer() {

@@ -11,6 +11,7 @@ import Footer from './components/footer'
 
 //Fonts
 import butler from './assets/fonts/Butler/Butler_Black.otf'
+import butlerlight from './assets/fonts/Butler/Butler_Light.otf'
 import hasklig from './assets/fonts/Hasklig/Hasklig-Regular.otf'
 import lobster from './assets/fonts/Lobster/Lobster-Regular.ttf'
 import pixel from './assets/fonts/Pix/PixelPix.ttf'
@@ -46,6 +47,11 @@ injectGlobal`
 @font-face {
   font-family: 'Righteous';
   src: url(${righteous})
+}
+
+@font-face {
+  font-family: 'Butler-Light';
+  src: url(${butlerlight});
 }
 `
 

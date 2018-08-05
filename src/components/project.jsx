@@ -73,11 +73,11 @@ const StyledProject = styled.div`
     }
 
     .project-header {
-      font-size: 20px;
+      font-size: 22px;
       margin-left: -40px;
     }
     .project-sub-header {
-      font-size: 10px;
+      font-size: 12px;
     }
   }
 
@@ -112,18 +112,22 @@ export default function Project(props) {
   return (
     <StyledProject>
       <div className="project-text-container">
-        <TrackVisibility className="animated flipInX delay-0.5s">
+        <TrackVisibility>
           {({ isVisible }) => {
             return isVisible
-              ? <p className="project-header">{title}</p>
+              ? <div className="animated flipInX delay-0.5s" f>
+                <p className="project-header">{title}</p>
+              </div>
               : null
           }}
         </TrackVisibility>
 
-        <TrackVisibility className="animation-container animated slideInUp">
+        <TrackVisibility>
           {({ isVisible }) => {
             return isVisible
-              ? <p className="project-sub-header">Web Application</p>
+              ? <div className="animation-container animated slideInUp">
+                <p className="project-sub-header">Web Application</p>
+              </div>
               : null
           }}
         </TrackVisibility>
